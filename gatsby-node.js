@@ -33,6 +33,7 @@ exports.sourceNodes = async ({
 					year_established,
 					description,
 					id,
+					trust_score,
 				} = exchange;
 				const node = {
 					name,
@@ -42,7 +43,8 @@ exports.sourceNodes = async ({
 					trust_score_rank,
 					year_established,
 					description,
-					id: createNodeId(id),
+					trust_score,
+					id,
 					internal: {
 						type: "Exchange",
 						contentDigest: createContentDigest(exchange),
