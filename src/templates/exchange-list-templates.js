@@ -16,7 +16,7 @@ const ExchangeList = ({ data, pageContext }) => {
 						return (
 							<li key={id}>
 								<p> {name}</p>
-								<img src={image}></img>
+								<img alt="company logo" src={image}></img>
 								<p>{country}</p>
 								<p>{url}</p>
 								<p>{trust_score_rank}</p>
@@ -27,11 +27,11 @@ const ExchangeList = ({ data, pageContext }) => {
 				</ul>
 			</main>
 			<nav>
-				{currentPage != 1 && (
-					<Link to={`/exchanges/${currentPage - 1}`}>Previous</Link>
+				{currentPage !== 1 && (
+					<Link to={`/exchanges/${currentPage - 1}`}>Prev</Link>
 				)}
 				{`${currentPage}/${numPages}`}
-				{currentPage != numPages && (
+				{currentPage !== numPages && (
 					<Link to={`/exchanges/${currentPage + 1}`}>Next</Link>
 				)}
 			</nav>
