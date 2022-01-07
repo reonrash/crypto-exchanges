@@ -8,31 +8,24 @@ const StyledMain = styled.main`
 	width: 95%;
 	margin: 0 auto;
 
-	img {
-		width: 50px;
-		height: 50px;
-	}
-
 	button {
 		display: block;
-		margin-bottom: 50px;
-		border: none;
-		background-color: #17a398;
 		width: 50px;
+		margin-bottom: 50px;
+		font-size: 1.2rem;
+		border: none;
+		background-color: ${({ theme }) => theme.colors.button.default};
 		line-height: 50px;
 		border-radius: 25px;
 		color: white;
 		text-align: center;
 	}
 	button:hover {
-		background-color: #0d5953;
+		background-color: ${({ theme }) => theme.colors.button.hover};
 	}
 	span {
 		margin-left: 3px;
 		font-weight: bold;
-	}
-	p {
-		max-width: 600px;
 	}
 `;
 const StyledExchange = styled.div`

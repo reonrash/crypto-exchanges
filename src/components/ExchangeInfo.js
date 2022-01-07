@@ -4,9 +4,8 @@ import styled from "styled-components";
 
 const StyledExchangeListItem = styled.li`
 	display: flex;
-
-	padding: 20px;
 	margin-bottom: 15px;
+	padding: 20px;
 	background-color: white;
 	border-radius: 20px;
 	gap: 20px;
@@ -18,10 +17,6 @@ const StyledExchangeListItem = styled.li`
 const StyledTitleSection = styled.div`
 	display: flex;
 	align-items: center;
-	img {
-		width: 50px;
-		height: 50px;
-	}
 `;
 
 const StyledInfoSection = styled.div`
@@ -45,20 +40,20 @@ const StyledInfoSection = styled.div`
 	-moz-hyphens: auto;
 	-webkit-hyphens: auto;
 	hyphens: auto;
-	a:hover {
-		background-color: #0d5953;
-	}
+
 	h5 {
 		font-size: 1.3rem;
 		margin-bottom: 5px;
 	}
+
 	p {
 		color: grey;
 	}
 
 	a {
 		display: block;
-		background-color: #17a398;
+		background-color: ${({ theme }) => theme.colors.button.default};
+		font-size: 1.2rem;
 		width: 50px;
 		line-height: 50px;
 		border-radius: 25px;
@@ -66,21 +61,18 @@ const StyledInfoSection = styled.div`
 		text-align: center;
 		text-decoration: none;
 	}
+
+	a:hover {
+		background-color: ${({ theme }) => theme.colors.button.hover};
+	}
+
 	@media screen and (min-width: 500px) {
 		flex-direction: row;
 		align-items: center;
-		a {
-			display: block;
-			background-color: #17a398;
-			width: 50px;
-			line-height: 50px;
-			border-radius: 25px;
-			color: white;
-			text-align: center;
-			text-decoration: none;
-		}
 	}
 `;
+
+// Component for general info about exchange which you see when going through exchange list
 
 const ExchangeInfo = ({ id, name, country, url, image, trust_score_rank }) => {
 	return (

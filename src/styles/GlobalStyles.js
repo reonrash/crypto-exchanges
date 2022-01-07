@@ -13,12 +13,18 @@ const GlobalStyles = createGlobalStyle`
         background-color: #f9f9f9;
     }
 
+    img {
+		width: 50px;
+		height: 50px;
+	}
+
     h1 {
         font-size: 2.5rem;
     }
     
     p {
         line-height: 1.6;
+        max-width: 600px;
     }`;
 
 export default GlobalStyles;

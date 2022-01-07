@@ -1,6 +1,7 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 const fetch = require("node-fetch");
+
 /*
     Sources exchange data and creates nodes for Gatsby to query at build time with GraphQL.
     Made two seperate calls to API because you cannot get all data from one call.
@@ -55,6 +56,11 @@ exports.sourceNodes = async ({
 		}
 	);
 };
+
+/*
+	Creates paginated pages for exchange list by giving the pageContext for each page a limit and skip 
+	to use in graphQL query 
+*/
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
 	const { createPage, createRedirect } = actions;

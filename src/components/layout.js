@@ -4,7 +4,12 @@ import styled from "styled-components";
 import GlobalStyles from "../styles/GlobalStyles";
 
 const theme = {
-	colors: {},
+	colors: {
+		button: {
+			default: "#17a398",
+			hover: "#0d5953",
+		},
+	},
 };
 
 const StyledLayout = styled.div`

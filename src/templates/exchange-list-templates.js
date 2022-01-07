@@ -11,8 +11,6 @@ const StyledMain = styled.main`
 
 	ul {
 		list-style-type: none;
-		background-color: #f9f9f9;
-		border-radius: 10px;
 		padding: 10px;
 	}
 
@@ -25,18 +23,17 @@ const StyledMain = styled.main`
 	}
 
 	p:nth-child(3) {
-		max-width: 600px;
 		margin: 20px 0;
 	}
 `;
 
 const StyledNav = styled.nav`
-	padding: 40px 35px;
 	display: flex;
 	justify-content: space-between;
+	padding: 40px 35px;
+
 	a {
 		color: black;
-		text-decoration: none;
 	}
 `;
 
