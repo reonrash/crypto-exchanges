@@ -1,40 +1,86 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
+import styled from "styled-components";
 import Layout from "../components/Layout";
+import ExchangeInfo from "../components/ExchangeInfo";
+
+const StyledMain = styled.main`
+	width: 95%;
+	margin: 0 auto;
+
+	ul {
+		list-style-type: none;
+		background-color: #f9f9f9;
+		border-radius: 10px;
+		padding: 10px;
+	}
+
+	h1 {
+		padding-bottom: 30px;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	p:nth-child(3) {
+		max-width: 600px;
+		margin: 20px 0;
+	}
+`;
+
+const StyledNav = styled.nav`
+	padding: 40px 35px;
+	display: flex;
+	justify-content: space-between;
+	a {
+		color: black;
+	}
+`;
 
 const ExchangeList = ({ data, pageContext }) => {
 	const exchanges = data.allExchange.edges;
 	const { currentPage, numPages } = pageContext;
 	return (
 		<Layout>
-			<main>
-				<h1>Exchanges</h1>
+			<StyledMain>
+				<h1>Crypto Exchanges</h1>
+				<h3>Learn about all the different crypto exchanges on Coin Gecko!</h3>
+				<p>
+					Explore the list below to find new exchanges. Click on the green arrow
+					to learn more about an exchange. Information below includes where the
+					exchange is headquarted, trust rank, and url to website. Some
+					information is not available and will have 🚫 in its place.
+				</p>
 				<ul>
 					{exchanges.map(({ node }) => {
 						const { id, name, country, url, image, trust_score_rank } = node;
-						return (
-							<li key={id}>
-								<p> {name}</p>
-								<img alt="company logo" src={image}></img>
-								<p>{country}</p>
-								<p>{url}</p>
-								<p>{trust_score_rank}</p>
-								<Link to={`/exchange/${id}`}>Learn More</Link>
-							</li>
-						);
+						const exchangeInfoProps = {
+							id,
+							name,
+							country,
+							url,
+							image,
+							trust_score_rank,
+						};
+						return <ExchangeInfo {...exchangeInfoProps}></ExchangeInfo>;
 					})}
 				</ul>
-			</main>
-			<nav>
-				{currentPage !== 1 && (
-					<Link to={`/exchanges/${currentPage - 1}`}>Prev</Link>
-				)}
-				{`${currentPage}/${numPages}`}
-				{currentPage !== numPages && (
-					<Link to={`/exchanges/${currentPage + 1}`}>Next</Link>
-				)}
-			</nav>
+			</StyledMain>
+			<StyledNav>
+				<span>
+					{currentPage !== 1 && (
+						<Link to={`/exchanges/${currentPage - 1}`}>Prev</Link>
+					)}
+				</span>
+				<span>{`${currentPage}/${numPages}`}</span>
+				<span>
+					{currentPage !== numPages && (
+						<Link to={`/exchanges/${currentPage + 1}`}>Next</Link>
+					)}
+				</span>
+			</StyledNav>
 		</Layout>
 	);
 };

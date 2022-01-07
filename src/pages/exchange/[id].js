@@ -6,12 +6,11 @@ const ExchangePage = (props) => {
 	const [exchangeData, setExchangeData] = useState({});
 	console.log(exchangeData);
 	useEffect(() => {
-		// get data from GitHub api
 		fetch(`https://api.coingecko.com/api/v3/exchanges/${props.params.id}`)
-			.then((response) => response.json()) // parse JSON from request
+			.then((response) => response.json())
 			.then((resultData) => {
 				setExchangeData(resultData);
-			}); // set data for the number of stars
+			});
 	}, []);
 
 	return (
