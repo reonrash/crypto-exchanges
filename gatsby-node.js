@@ -57,7 +57,17 @@ exports.sourceNodes = async ({
 };
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-	const { createPage } = actions;
+	const { createPage, createRedirect } = actions;
+
+	// Redirects index page to exchanges page
+
+	createRedirect({
+		fromPath: "/",
+		toPath: "/exchanges",
+		isPermanent: true,
+		redirectInBrowser: true,
+	});
+
 	const result = await graphql(
 		`
 			{

@@ -14,6 +14,7 @@ const StyledLayout = styled.div`
 	margin: 0 auto;
 	nav a {
 		text-decoration: none;
+		color: black;
 	}
 	nav {
 		margin: 40px 0;
@@ -26,7 +27,7 @@ const Layout = ({ children }) => {
 			<StyledLayout>
 				<GlobalStyles />
 				<nav>
-					<Link to="/">trackr</Link>
+					<Link to="/exchanges">Exchange TRACKR</Link>
 				</nav>
 				{children}
 			</StyledLayout>
