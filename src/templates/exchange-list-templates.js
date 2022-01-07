@@ -36,6 +36,7 @@ const StyledNav = styled.nav`
 	justify-content: space-between;
 	a {
 		color: black;
+		text-decoration: none;
 	}
 `;
 
@@ -64,7 +65,9 @@ const ExchangeList = ({ data, pageContext }) => {
 							image,
 							trust_score_rank,
 						};
-						return <ExchangeInfo {...exchangeInfoProps}></ExchangeInfo>;
+						return (
+							<ExchangeInfo key={id} {...exchangeInfoProps}></ExchangeInfo>
+						);
 					})}
 				</ul>
 			</StyledMain>
@@ -74,7 +77,7 @@ const ExchangeList = ({ data, pageContext }) => {
 						<Link to={`/exchanges/${currentPage - 1}`}>Prev</Link>
 					)}
 				</span>
-				<span>{`${currentPage}/${numPages}`}</span>
+				<span>{`Page: ${currentPage} of ${numPages}`}</span>
 				<span>
 					{currentPage !== numPages && (
 						<Link to={`/exchanges/${currentPage + 1}`}>Next</Link>

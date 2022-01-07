@@ -84,7 +84,7 @@ const StyledInfoSection = styled.div`
 
 const ExchangeInfo = ({ id, name, country, url, image, trust_score_rank }) => {
 	return (
-		<StyledExchangeListItem key={id}>
+		<StyledExchangeListItem>
 			<StyledTitleSection>
 				<img alt="company logo" src={image}></img>
 			</StyledTitleSection>
