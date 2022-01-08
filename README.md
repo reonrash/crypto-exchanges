@@ -6,14 +6,15 @@ Web application that displays list of exchanges from Coin Gecko API and individu
 ```javascript
 npm i
 ```
-### View Application locally
+### Run application locally
 
 ```javascript
 npm run develop
 ```
 
-Must have npm installed to view app locally.
+Must have npm installed to run app locally.
 
 ### Room for improvement 
 - Dry with CSS
 - Organization of CSS rules
+- Discrepancies with Styled-Components and Gatsby best practices
