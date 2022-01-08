@@ -11,7 +11,6 @@ const StyledMain = styled.main`
 
 	ul {
 		list-style-type: none;
-		padding: 10px;
 	}
 
 	h1 {
