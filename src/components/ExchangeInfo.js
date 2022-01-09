@@ -25,7 +25,6 @@ const StyledInfoSection = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-	gap: 20px;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 
@@ -40,6 +39,10 @@ const StyledInfoSection = styled.div`
 	-moz-hyphens: auto;
 	-webkit-hyphens: auto;
 	hyphens: auto;
+
+	& > div > p {
+		margin-bottom: 5px;
+	}
 
 	h5 {
 		font-size: 1.3rem;
@@ -60,6 +63,12 @@ const StyledInfoSection = styled.div`
 		color: white;
 		text-align: center;
 		text-decoration: none;
+	}
+
+	span {
+		color: black;
+		margin-left: 5px;
+		font-weight: bold;
 	}
 
 	a:hover {
@@ -84,11 +93,14 @@ const ExchangeInfo = ({ id, name, country, url, image, trust_score_rank }) => {
 				<div>
 					<h5> {name}</h5>
 					<p>
-						{country ? `📍 ${country}` : "🚫 Country not known"} |{" "}
-						{url ? url : "🚫 URL not known"} |{" "}
-						{trust_score_rank
-							? trust_score_rank
-							: "🚫 Trust score rank not known"}
+						🌎 <span>Located: </span> {country ? country : "🚫"}
+					</p>
+					<p>
+						💻<span>Url:</span> {url ? url : "🚫"}
+					</p>
+					<p>
+						👍<span>Trust score rank:</span>{" "}
+						{trust_score_rank ? trust_score_rank : "🚫"}
 					</p>
 				</div>
 				<div>

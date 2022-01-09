@@ -21,7 +21,7 @@ const StyledMain = styled.main`
 		font-size: 1.5rem;
 	}
 
-	p:nth-child(3) {
+	& > p {
 		margin: 20px 0;
 	}
 `;

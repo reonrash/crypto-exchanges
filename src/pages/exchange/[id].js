@@ -24,7 +24,7 @@ const StyledMain = styled.main`
 		background-color: ${({ theme }) => theme.colors.button.hover};
 	}
 	span {
-		margin-left: 3px;
+		margin-left: 5px;
 		font-weight: bold;
 	}
 `;
