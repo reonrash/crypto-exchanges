@@ -8,7 +8,6 @@ const StyledExchangeListItem = styled.li`
 	padding: 20px;
 	background-color: white;
 	border-radius: 20px;
-	gap: 20px;
 	&:hover {
 		box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 	}
@@ -17,6 +16,7 @@ const StyledExchangeListItem = styled.li`
 const StyledTitleSection = styled.div`
 	display: flex;
 	align-items: center;
+	margin-right: 20px;
 `;
 
 const StyledInfoSection = styled.div`
