@@ -70,7 +70,11 @@ const ExchangeList = ({ data, pageContext }) => {
 			<StyledNav>
 				<span>
 					{currentPage !== 1 && (
-						<Link to={`/exchanges/${currentPage - 1}`}>Prev</Link>
+						<Link
+							to={`/exchanges/${currentPage - 1 === 1 ? "" : currentPage - 1}`}
+						>
+							Prev
+						</Link>
 					)}
 				</span>
 				<span>{`Page: ${currentPage} of ${numPages}`}</span>
